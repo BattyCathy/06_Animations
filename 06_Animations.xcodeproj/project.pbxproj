@@ -13,6 +13,7 @@
 		B162F0F425CB69A5002061F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B162F0F325CB69A5002061F9 /* Preview Assets.xcassets */; };
 		B162F0FF25CB69A5002061F9 /* _6_AnimationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B162F0FE25CB69A5002061F9 /* _6_AnimationsTests.swift */; };
 		B162F10A25CB69A6002061F9 /* _6_AnimationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B162F10925CB69A6002061F9 /* _6_AnimationsUITests.swift */; };
+		B162F11B25CB69FB002061F9 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B162F11A25CB69FB002061F9 /* Notes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		B162F10525CB69A6002061F9 /* 06_AnimationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 06_AnimationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B162F10925CB69A6002061F9 /* _6_AnimationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _6_AnimationsUITests.swift; sourceTree = "<group>"; };
 		B162F10B25CB69A6002061F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B162F11A25CB69FB002061F9 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				B162F0EC25CB69A1002061F9 /* _6_AnimationsApp.swift */,
 				B162F0EE25CB69A1002061F9 /* ContentView.swift */,
+				B162F11A25CB69FB002061F9 /* Notes.swift */,
 				B162F0F025CB69A5002061F9 /* Assets.xcassets */,
 				B162F0F525CB69A5002061F9 /* Info.plist */,
 				B162F0F225CB69A5002061F9 /* Preview Content */,
@@ -261,6 +264,7 @@
 			files = (
 				B162F0EF25CB69A1002061F9 /* ContentView.swift in Sources */,
 				B162F0ED25CB69A1002061F9 /* _6_AnimationsApp.swift in Sources */,
+				B162F11B25CB69FB002061F9 /* Notes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
