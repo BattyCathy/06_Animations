@@ -289,3 +289,39 @@ import Foundation
 
 
 //MARK: 4. Building Custom Transitions Using ViewModifier
+
+//It's possible, and actually surprisingly easy - to create wholy new transitions for SwiftUI, allowing us to add and remove views using entirely custom animations.
+
+//This funtionality is made possible by the .modifier transition, which accepts any view modifier we want. The catch is that we need to be able to instantiate the modifier, which means it needs to be one we create ourselves.
+
+//To try this our, we could write a view modifier that lets us mimic the Pivot animation in Keynote - it causes a new slide to rotate in from the top left corner. In SwiftUI speak, that means creating a view modifier that causes our view to rotate in from its top-left corner. In SiftUI-speak, that means creating a view modifier that causes our view to rotate in from one corner, without escaping the bounds it's supposed to be in. SwiftUI actually gives us modifiers to do just that: rotationEffect() lets us rotate a vie in 2D space, an clipped() stops the view from being drawn outside of its rectangular space.
+
+//rotationEffect() is similar to rotation3dEffect(), except it always rotates aroundd the Z axis. However, it also gives us the ability to control the anchor point of the rotation - which part of the view should be fixed in place as the center of the rotation. SwiftUI gives us a UnitPoint type for controllling the anchor, which lets us specify an exact X/Y pont for the rotation or use one of the many built-in options - .topLeading, .bottomTrailing, .center, and so on.
+
+//Let's put this all into code by creating a CornerRotateModifier struct that has an anchor point to control where the rotation should take place, and an amount to control how much rotation should be applied:
+
+/*
+ struct CornerRotateModifier: ViewModifier {
+    let amount: Double
+    let anchor: UnitPoint
+ 
+ func body(content: Content) -> some View {
+    content.rotationEffect(.degrees(amount), anchor: anchor).clippped()
+    }
+ }
+ */
+
+//The addition of clipped() there means that when the view rotates the parts that are lying outside its natural rectangle don't get drawn.
+
+//We can try that straight away using the .modifier transition, but it's a little unwieldy. A better idea is to wrap that in an extension to AnyTransition, making it rotate from -90 to 0 on its top leading corner:
+
+/*
+ extension AnyTransition {
+    static var pivot: AnyTransition {
+        .modifier(
+            active: CornerRotateModifier(amount: -90, anchor: .topleading),
+            identity: CornerRotateModifier(amount: 0, anchor: .topLeading)
+        )
+    }
+ }
+ */
