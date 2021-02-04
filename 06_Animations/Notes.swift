@@ -177,6 +177,15 @@ import Foundation
  
  */
 
+//I've switched autoreverses to false, but otherwise it's the same animation.
+
+//Finally, addd an onAppear() modifier to the button, which will set the animationAmount to 2:
+
+/*
+ .onAppear {
+    self.animationAmount = 2
+ }
+ */
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations

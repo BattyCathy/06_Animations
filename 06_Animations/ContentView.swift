@@ -38,6 +38,9 @@ struct ContentView: View {
                 .repeatForever(autoreverses: true)
         )
         .blur(radius: (animationAmount - 1) * 3)
+        .onAppear {
+            self.animationAmount = 2
+        }
         
     }
 }
