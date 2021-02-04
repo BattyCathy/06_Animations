@@ -269,5 +269,27 @@ import Foundation
 ), in: 1...10)
  */
 
-//These binding animations effectively turn the tables on implicit animations: rather than setting the nimation on a view and implicitly animating it with a state change, we now set nothing on the view and explicitly animate it with a state change, we now set nothing on the view and explicitly animate it with a state change. In the former, the state change has no Idea it will trigger an animation, and in the latter the view has no idea it will be animated - both work and both are important. 
+//These binding animations effectively turn the tables on implicit animations: rather than setting the nimation on a view and implicitly animating it with a state change, we now set nothing on the view and explicitly animate it with a state change, we now set nothing on the view and explicitly animate it with a state change. In the former, the state change has no Idea it will trigger an animation, and in the latter the view has no idea it will be animated - both work and both are important.
+
+
 //MARK: 5. Creating Explicit Animations
+
+//You've seen how SwiftUI lets us create implicit animations by attaching the animation() modifier to a view, and how it also lets us create animated binding chages by adding the animation() modifier to a binding, but there's a third useful way we can create animations: explicitly asking SwiftUI to animate changes occurring as the result of a state change.
+
+//Now, though, we're being ecplicit that what we want an animation to occur when some arbitrary state chage ovccurs: it's not attached to a binding, and it's not attached to a view, it's just us explicitly asking for a particular animation to occur because of a state change.
+
+//To demonstrate this, let's return to a simple button example again:
+
+/*
+ struct ContentView: View {
+    var body: some View {
+        Button("Tap Me") {
+            // do nothing
+        }
+        .padding(50)
+        .background(Color.red)
+        .foregroundColor(.white)
+        .clipShape(Circle())
+    }
+ }
+ */
