@@ -214,4 +214,44 @@ import Foundation
  */
 //MARK: 4. Animating Bindings
 
+//The animation() modifier can be applied to any SwiftUI binding, which causes the value to animate between its current and new value. This even works if the data in question isn't really something that sounds like it can be animated, such as Boolean - you can mentally imagine animating from 1.0 to 2.0 because we could do 1.5, 1.1, 1.15, and so one, but going from "false" to "true" sounds like there's no room for in between values.
+
+//This is best explained with some working code to look at, so here's a view with a VStack, a Stepper, and a Button:
+
+/*
+ struct ContentView: View {
+    @State private var animationAmount: CGFloat = 1
+ 
+    var body: some View {
+        VStack {
+            Stepper("Scale amount", value: $animationAmount.animation(), in: 1...10)
+ 
+            Spacer()
+ 
+            Button("Tap Me") {
+                slef.aniamtionAmount += 1
+            }
+            .padding(40)
+            .background(Color.red)
+            .foregroundColor(.white)
+            .clipShape(Circle())
+            .scaleEffect(animationAmount)
+        }
+    }
+ }
+ */
+
+//Tip: that uses a simplified Stepper initializer that works great if you only want a text title, much the same way as Button has a simplified text initializer too.
+
+//As you can see, the stepper can move animationAmount up and down, and tapping the button will add 1 to it - they are both tied to the same data, which in turn causes the size of the button to change. however, tapping the button chages animationCOunt immediately, so the button will just jump up to its larger size. In contrast, the stepper is bound to $animationAMount.animation(), which menas SiwftUI will automatically animate its changes.
+
+//Now, as an experiment I'd like you to change the start of the body to this:
+
+/*
+ var body: some View {
+    print(animationAmount)
+ 
+    return VStack {
+ */
+
 //MARK: 5. Creating Explicit Animations
