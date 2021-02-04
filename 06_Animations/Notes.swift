@@ -325,4 +325,10 @@ import Foundation
 
 //Run that code now and I think you'll be impressed by how good it looks - every time you tap the button it spins around in 3D space, and it was so easy to write. If you have time, experiment with the axes so you can really undertand how they work. In case you were curious, you can use more than one axis at once.
 
-//withAnimation() can be gven 
+//withAnimation() can be given an animation parameter, using the same animations you can use elsewhere in SwiftUI. For example, we could make our ratation effect use a spring animation using withAnimation() cal like this:
+
+/*
+ withAnimation(.interpolatingSpring(stiffness: 5, damping: 1)) {
+    self.animationAmount += 360
+ }
+ */
