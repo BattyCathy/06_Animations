@@ -11,7 +11,9 @@ struct ContentView: View {
     @State private var animationAmount: CGFloat = 1
     
     var body: some View {
-        VStack {
+        print(animationAmount)
+        
+       return VStack {
             Stepper("Scale amount", value: $animationAmount.animation(), in: 1...10)
             
             Spacer()

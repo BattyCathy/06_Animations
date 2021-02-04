@@ -254,4 +254,20 @@ import Foundation
     return VStack {
  */
 
+//Becasue we have some non-view code in there, we need to add return before the VStack so Swift understands which part is the view that is being sent back. But adding print(animationAmount) is important, and to see why, I'd like you to run the program again and try manipulating the stepper.
+
+//What you should see is that it prints out 2.0, 3.0. 4.0, and so one. At the same time, the button is scaling up or down smoothly - it doesn't just jump straight to scle 2, 3, 4. What's actually happening here is that SWiftUI is examining the state of our view before the binding chages, examining the target state of our views after the binding changes, then applying an animation to get from point A to point B.
+
+//This is why we can animate a Boolean changing: Swift isn't somehow inventing new values between false and true, but just animating the view changes that occur as a result of the change.
+
+//Those binding animations use the same animation() modifier that we use on views, so you can go to town with animation modfifiers if you want to:
+
+/*
+ Stepper("Scale amount", value: $animationAmount.animation(
+    Animation.easeInOut(duration: 1)
+        .repeatCount(3, autoreverses: true)
+), in: 1...10)
+ */
+
+//These binding animations effectively turn the tables on implicit animations: rather than setting the nimation on a view and implicitly animating it with a state change, we now set nothing on the view and explicitly animate it with a state change, we now set nothing on the view and explicitly animate it with a state change. In the former, the state change has no Idea it will trigger an animation, and in the latter the view has no idea it will be animated - both work and both are important. 
 //MARK: 5. Creating Explicit Animations
