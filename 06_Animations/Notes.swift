@@ -98,6 +98,33 @@ import Foundation
 
 //.animation(interpolatingSpring(stiffness: 50, damping: 1))
 
+//For more precise control, we can customize the animation with a duration specified as a number of seconds. So, we could get an ease-in-out animation that lasts for two seconds like this:
+
+/*
+ struct ContentView: View {
+    @State private var animationAmount: CGFloat = 1
+ 
+    var body: some View {
+        Button("Tap Me") {
+            self.animationAmount += 1
+        }
+        .padding(50)
+        .background(Color.red)
+        .foregroundColor(.white)
+        .clipShape(Circle())
+        .scaleEffect(animationAmount)
+        .animation(.easeInOut(duration: 2)
+ */
+
+//When we say .easeInOut(duration: 2) we're acutally createing an instance of an Animation struct that has its own set of modifiers. So, we can attach modifiers directly to the animation to add a delay lkke this:
+
+/*
+ .animation(
+        Animation.easeInOut(duration: 2)
+            .delay(1)
+ )
+ */
+
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations
