@@ -125,6 +125,19 @@ import Foundation
  )
  */
 
+//You'll notice that we explicitly have to say Animation.easeIntOUt() now, because otherwise SWift isn't quite sure what we mean. Regardless, tapping the button will now wait for a second before executing a two-second animation.
+
+//We can also ask the animation to repeat a certain number of times, and even make it bounce back and forwwrd by setting autoreverses to true. This creates a one-second animation that will bounce up and down before reaching its final size:
+
+/*
+ .animation(
+    Animation.easeInOut(duration: 1)
+        .repeatCount(3, autoreverses: true)
+ )
+ */
+
+
+
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations
