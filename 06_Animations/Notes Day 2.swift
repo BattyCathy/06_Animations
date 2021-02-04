@@ -159,6 +159,66 @@ import Foundation
  }
  */
 
+//If you run the code you'll see you can now drag the gradient card around, and when you released the drag it will jump back to the center. The card has its offset determined by dragAmount, which in turn is being set by the drag gesture.
+
+//Now that everything works, we can bring that movement to life with some animation, and we have two options: add an implicit animation that will animate the drag and the release, or add an explicit animation to animate just the release.
+
+//To see the former in action, add this modifier to the linear gradient:
+
+//.animation(.spring())
+
+//As you drag around, the card will move to the drag location with a slight delay because of the spring animation, but it will also gently overshoot if you make sudden movements.
+
+//To se explicit animations in action, remove that animation() modifier and change your existing onEnded() drag gesture code to this:
+
+/*
+ .onEnded { _ in
+    withAnimation(.spring()) {
+        self.dragAmount = .zero
+    }
+ }
+ */
+
+//Now the card will follow your drag immediately (because that's not being animated), but when you release it will animate.
+
+//If we combine offset animations with drag gestures and a little delay, we can create remarkable fun animations without a lot of code.
+
+//To demonstrate this, we could write the text "Hello SwiftUI" as a series of individual letters, each one with a background color and offset that is controlled by some state. Strings are just slightly fancy arrays of characters, so we can get a real array from a string like this: Array("Hello SwiftUI")
+
+//Anyway, try this our and see what you think:
+
+/*struct ContentView: View {
+    let letters = Array("Hello SwiftUI")
+    @State private var enabled = false
+    @State private var dragAmount = CGSize.zero
+ 
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(0..<letters.count) { num in
+                Text(String(self.letters[num]))
+                    .paddint(5)
+                    .font(.title)
+                    .background(slef.enabled ? Color.blue : Color.red)
+                    .offset(self.dragAmount)
+                    .animation(Animation.default.delay(Double(num) / 20))
+        }
+    }
+    .gesture(
+        DragGesture()
+            .onChanged { self.dragAmount = $0.translation }
+            .onEnded { _ in
+                self.dragAmount = .zero
+                self.enabled.toggle()
+            }
+    )
+    }
+ }
+ 
+ */
+
+//If you run that code you'll see that any letter can be dragged around to have the whole string follow suit, with a brief delay causing a snake-like effect. SwiftUI will also add in color changing as you release the drag, animating between blue and red even as letters move back to the center.
+
+
 //MARK: 3. Showing and Hiding Views with Transitions
 
 //MARK: 4. Building Custom Transitions Using ViewModifier
