@@ -57,6 +57,14 @@ import Foundation
 
 //@State private var animationAmount: CGFloat = 1
 
+//Now we can make the button use that for its scale effect, by adding this modifier:
+
+//.scaleEffect(animationAmount)
+
+//Finally, when the button is tapped we want to increase the animation amount by 1, so use this for the button's action:
+
+//self.animationAmount += 1
+
 //MARK: 3. Customizing Animations in SwiftUI
 
 //MARK: 4. Animating Bindings
