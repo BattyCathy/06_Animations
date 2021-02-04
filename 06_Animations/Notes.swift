@@ -186,6 +186,32 @@ import Foundation
     self.animationAmount = 2
  }
  */
+
+//Because the ovelay circle uses that for a "repeat forever" animation without autoreversing, you'll see the overlay circle scalu up and fade continuously.
+
+//Your fininshed code should look like this:
+/*
+ Button("Tap Me") {
+    //self.animationAmount += 1
+ }
+ .padding(40)
+ .background(Color.red)
+ .foregroundColor(.white)
+ .clipshape(Circle())
+ .overlay(
+    Circle()
+        .stroke(Color.red)
+        .scaleEffect(animationAmount)
+        .opacity(Double(2 - animationAmount))
+        .animation(
+            Animation.easeOut(duration: 1)
+                .repeatForever(autoreverses: false)
+        )
+ )
+ .onAppear {
+    self.animationAmount = 2
+ }
+ */
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations

@@ -16,7 +16,7 @@ struct ContentView: View {
             .padding()
         
         Button("Tap Me") {
-            self.animationAmount += 1
+            //self.animationAmount += 1
         }
         .overlay(
             Circle()
