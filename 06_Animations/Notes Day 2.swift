@@ -281,4 +281,11 @@ import Foundation
     .frame(width: 200, height: 200)
     .transition(.scale)
  */
+//Now tapping the button looks much better: the rectangle scales up as the button makes space, then scales down when tapped again.
+
+//There are a handful of other transitions you can try if you want to experiment. A useful one is .asymmetric, which lets us use one transition when the view is being shown and another when it's disappearing. To try it out, replace the rectangle's existing transition with this:
+
+//transition(.asymmetric(insertion: .scale, removal: .opacity))
+
+
 //MARK: 4. Building Custom Transitions Using ViewModifier
