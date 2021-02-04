@@ -137,7 +137,27 @@ import Foundation
 
 //First, we need some state to store the amount of their drag:
 
+//@State private var dragAmount = CGSize.zero
 
+//Second, we want to use that size to influence the card's position on-screen. SwiftUI gives us a dedicated modifier for this called offset(), which lets us adjust the X and Y coordinate of a view without moving other views around it. You can pass in discrete X and Y coordinates if you want to, but - by no mere coincidence - offset() can also take a CGSize directly.
+
+//So, step two is to add this modifier to the card gradient:
+
+//.offset(dragAmount)
+
+//Now comes the important part: we can create a DragGesture and attach it to the card. Drag gestures have two extra modifiers that are useful to us fere: onChanged() lets us run a closure whenever the user moves their finger, and onEnded() lets us run a closure when the user lifts their finger off the screen, ending the drag.
+
+//Both of those closrue are given a single parameter, which describes the drag operation - where it started, where it is currently, how far it moved, and so one. For our onChanged() modifier we're going to read the translation of the drag, which tells us how far it's moved from the start point - we can addign that directly to dragAmount so that our view moves along with the gesture. For onEnded() we're going to ignore the input entirely, because we'll be setting dragAmount back to zero.
+
+//So, add this modifier to the linear gradient now:
+
+/*
+ .gesture(
+    DragGesture()
+        .onChanged { self.dragAmount = $0.translation }
+        .onEnded { _ in slef.dragAmount = .zero }
+ }
+ */
 
 //MARK: 3. Showing and Hiding Views with Transitions
 
