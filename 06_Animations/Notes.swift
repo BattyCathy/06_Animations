@@ -136,7 +136,16 @@ import Foundation
  )
  */
 
+//If we had set repeat count to 2 then the button would scale up then down again, the jump immediately back to its larger scale. This is because ultimately the button must match the state of our program, regardless of what animations we apply - when the animation finishes the button must have whatever value is set in animationAmount.
 
+//For continuous animations, there is a repeatForever() modifier that can be used like this:
+
+/*
+ .animation)
+    Animation.easeInOut(duration: 1)
+        .repeatForever(autoreverses: true)
+ )
+ */
 
 //MARK: 4. Animating Bindings
 
