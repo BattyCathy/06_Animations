@@ -45,6 +45,18 @@ import Foundation
  .clipShape(Circle())
  */
 
+//What we want is for that button to get bigger every time it's tapped, and we can do that with a new modifier called scaleEffect(). You provide this with a value from 0 up, and it will be drawn at that size - a value of 1.0 is equivalent to 100%, i.e. the button's normal size.
+
+//Because we want to change the scale effect value every time the button is tapped, we need to use an @State propert, but there's a catch here: for historical reasons mostly around interacting with Apple's older APIs, we need to use a specific data type called CGFloat.
+
+//CGFloat is, for all intents and purposes, a Double under a different name, but on older hardware it uses a smaller type of number storage called Float. Back when this choice mattered, CGFloat allowed Apple to not care about which type of hardware we were building for, but nowadays almost everything uses Double so it's just a piece of legacy staring at us with disgust.
+
+//Anyway, all this matters because if we make the property var animationAmount = 1 we get an integer, and if we use var animationAMount = 1.0 then we get a Double, but there is no built in way to get CGFloat automatically - we need to use a type annotations.
+
+//So, please add this property to you view now:
+
+//@State private var animationAmount: CGFloat = 1
+
 //MARK: 3. Customizing Animations in SwiftUI
 
 //MARK: 4. Animating Bindings

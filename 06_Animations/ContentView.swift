@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var animationAmount: CGFloat = 1
+    
     var body: some View {
         Text("Hello, world!")
             .padding()
