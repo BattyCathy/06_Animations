@@ -21,8 +21,12 @@ struct ContentView: View {
         .overlay(
             Circle()
                 .stroke(Color.red)
-                .scaleEffect(animationAmount)
+                .scaleEffect()
                 .opacity(Double(2 - animationAmount))
+                .animation(
+                    Animation.easeOut(duration: 1)
+                        .repeatForever(autoreverses: false)
+                )
         )
         .padding(50)
         .background(Color.red)

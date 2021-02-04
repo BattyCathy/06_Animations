@@ -162,6 +162,21 @@ import Foundation
  )
  */
 
+//That makes a stroked red circle button, using an opacity value of 2 - animationAmount so that when animationAmount is 1 the opacity is 1 (it's opaque) and when animationAmount is 2 the opacity is 0 (it's transparent).
+
+//Next, remove the scaleEffect() modifier from the button and comment out the animationAmount += 1 action part too, because we don't want that to change any more, and move its animation madifier up to the circle inside the overlay:
+
+/*
+ overlay(
+    Circle()
+        .stroke(Color.red)
+        .scaleEffect()
+        .opacity(Double(2 - animationAmount))
+        .animation.easeOut(duration: 1)
+            .repeatForever(autoreverses: false)
+ 
+ */
+
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations
