@@ -11,6 +11,14 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world!")
             .padding()
+        
+        Button("Tap Me") {
+                // do nothing
+        }
+        .padding(50)
+        .background(Color.red)
+        .foregroundColor(.white)
+        .clipShape(Circle())
     }
 }
 

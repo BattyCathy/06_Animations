@@ -31,6 +31,20 @@ import Foundation
 
 //MARK: 2. Creating Implicit Animations
 
+//In SwiftUI, the simplest type of animation is an implicit one: we tell our views ahead of time "if someone wants to animate you, here's how you should respond", and nothing more. SwiftUI will then take care of making sure changes that do occur follow the animation you requested. In practice this make animation trivial - it literally could not be any easier.
+
+//Let's start with an example. This code shows a simple red button with no action, using 50 points of padding and a circular clip shape:
+
+/*
+ Button("Tap Me") {
+    //do nothing
+ }
+ .padding(50)
+ .background(Color.red)
+ .foreground(Color.white)
+ .clipShape(Circle())
+ */
+
 //MARK: 3. Customizing Animations in SwiftUI
 
 //MARK: 4. Animating Bindings
