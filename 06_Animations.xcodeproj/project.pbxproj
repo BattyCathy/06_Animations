@@ -15,6 +15,7 @@
 		B162F10A25CB69A6002061F9 /* _6_AnimationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B162F10925CB69A6002061F9 /* _6_AnimationsUITests.swift */; };
 		B162F11B25CB69FB002061F9 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B162F11A25CB69FB002061F9 /* Notes.swift */; };
 		B173AC8D25CB9FFE00B6839E /* Notes Day 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B173AC8C25CB9FFE00B6839E /* Notes Day 2.swift */; };
+		B173AC9525CBC27A00B6839E /* WrapUpNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B173AC9425CBC27A00B6839E /* WrapUpNotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B162F10B25CB69A6002061F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B162F11A25CB69FB002061F9 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		B173AC8C25CB9FFE00B6839E /* Notes Day 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notes Day 2.swift"; sourceTree = "<group>"; };
+		B173AC9425CBC27A00B6839E /* WrapUpNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapUpNotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				B162F0EE25CB69A1002061F9 /* ContentView.swift */,
 				B162F11A25CB69FB002061F9 /* Notes.swift */,
 				B173AC8C25CB9FFE00B6839E /* Notes Day 2.swift */,
+				B173AC9425CBC27A00B6839E /* WrapUpNotes.swift */,
 				B162F0F025CB69A5002061F9 /* Assets.xcassets */,
 				B162F0F525CB69A5002061F9 /* Info.plist */,
 				B162F0F225CB69A5002061F9 /* Preview Content */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B162F0EF25CB69A1002061F9 /* ContentView.swift in Sources */,
+				B173AC9525CBC27A00B6839E /* WrapUpNotes.swift in Sources */,
 				B173AC8D25CB9FFE00B6839E /* Notes Day 2.swift in Sources */,
 				B162F0ED25CB69A1002061F9 /* _6_AnimationsApp.swift in Sources */,
 				B162F11B25CB69FB002061F9 /* Notes.swift in Sources */,
