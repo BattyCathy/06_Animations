@@ -86,6 +86,18 @@ import Foundation
 
 //MARK: 3. Customizing Animations in SwiftUI
 
+//When we attach the modifier .animation(.default) to a view, SwiftUI will automatically animate any chanes that happen to that view using whatever is the default system animation. In practice, that is an "ease in, ease out" animation, which means iOS will start the animation slow, make it pick up speed, then slow down as it approaches its end.
+
+//We can control the type of animation used by passing in different values to the modifier. For example, we could use .easeOUt to make the animiation start fast then slow down to a smooth stop:
+
+//.animation(.easeOut)
+
+//There are even spring animations, that cause the movement to overshoot then return to settle at its targer. You can control the initisal stiffness of the spring (which sets the initial velocity when the animation starts), and how fast the animation should be "damped" - lower values cause the spring to bounce back and forth for longer.
+
+//For example, this makes our button scale up quickly then bounce:
+
+//.animation(interpolatingSpring(stiffness: 50, damping: 1))
+
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations
