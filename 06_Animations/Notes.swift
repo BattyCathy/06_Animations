@@ -65,6 +65,25 @@ import Foundation
 
 //self.animationAmount += 1
 
+//If you run the code you'll see that you can tap the button repeatedly to have it scale up and up. It won't get redrawn at increasingly higher resolutions, so as the button gets bigger you'll see it gets blurry, but that's OK.
+
+//Now, the human eye is highly sensitive to movement - we're extremely good at detecting when things move or change their appearance, which is what makes animation both so important and so pleasing. So, we can ask SwiftUI to create an implicit animation by adding an animation() modifier to the button:
+
+//.animation(.default)
+
+//That asks SwiftUI for a default animation, and immediately you'll see that tapping the button now causes it to scale up with an animation.
+
+//That implicit animation takes effect on all properties of that view change, meaning that if we attach more animating modifiers to the view then they will all change together. For example, we could add a second new modifier to the button, .blur(), which lets us add a Gaussian blur with a special radius:
+
+//.blur(radis: (animationAmount - 1) * 3)
+
+//A radius of (animationAmount - 1) * 3 means the blur radius will start at 0 (no blur), but then move to 3 points, 6 points, 9 points, and beyond as you tap the button.
+
+//If you run the app again, you'll see that it now scales and blurs smoothly.
+
+//The point is that nowhere have we said what each frame of the animation should look like, and we haven't even said when SwiftUI should start and finish the animation. Instead, our animation becomes a function of our state just like the views themselves.
+
+
 //MARK: 3. Customizing Animations in SwiftUI
 
 //MARK: 4. Animating Bindings
