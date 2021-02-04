@@ -119,6 +119,26 @@ import Foundation
 
 //MARK: 2. Animating Gestures
 
+//SwiftUI lets us attach gestures to any views, and the effects of those gestures can also be animated. We'll be looking at gestures in more detail later on, but for now let's try something relatively simple: a card that we can drag around the screen, but when we go it snaps back into its original location.
+
+//First, our initial layout:
+
+/*
+ Struct ContentView: View {
+    var body: some View {
+        LinearGradient(graident: Gradient(colors: [.yellow, .red]), startPoint: .topLeading, endPoint: .bottomTrailing)
+            .frame(width: 300, height: 200)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+ }
+ */
+
+//That draws a card-like view in the center of the screen. We want to move that around the screen based on the location of our finger, and that requires three steps.
+
+//First, we need some state to store the amount of their drag:
+
+
+
 //MARK: 3. Showing and Hiding Views with Transitions
 
 //MARK: 4. Building Custom Transitions Using ViewModifier
