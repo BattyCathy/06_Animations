@@ -18,6 +18,12 @@ struct ContentView: View {
         Button("Tap Me") {
             self.animationAmount += 1
         }
+        .overlay(
+            Circle()
+                .stroke(Color.red)
+                .scaleEffect(animationAmount)
+                .opacity(Double(2 - animationAmount))
+        )
         .padding(50)
         .background(Color.red)
         .foregroundColor(.white)
@@ -28,6 +34,7 @@ struct ContentView: View {
                 .repeatForever(autoreverses: true)
         )
         .blur(radius: (animationAmount - 1) * 3)
+        
     }
 }
 

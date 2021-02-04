@@ -147,6 +147,21 @@ import Foundation
  )
  */
 
+//We can use these repeatForever() animations in combination with onAppear() to make animations that start immediately and continue animating for the life of the view.
+
+//To demonstrate this, we're going to remove the animation from the button itself and instead apply it an overlay to make a sort of pulsating circle around the button.
+
+//So, first add this overlay() modifier to the button:
+
+/*
+ .overlay(
+    Circle()
+        .stroke(Color.red)
+        .scaleEffect(animationAmount)
+        .opacity(Double(2 - animationAmount))
+ )
+ */
+
 //MARK: 4. Animating Bindings
 
 //MARK: 5. Creating Explicit Animations
