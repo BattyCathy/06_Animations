@@ -221,4 +221,26 @@ import Foundation
 
 //MARK: 3. Showing and Hiding Views with Transitions
 
+//One of the most powerful feature of SwiftUI is the ability to customize the way views are shown and hidden. Previously you've seen how we can use regular if conditions to include views conditionally, which means when that condition changes we can insert or remove views from our view hierarchy.
+
+//Transitions control how this insertion and removal takes place, and we can work with the built =-in transitions, combine them in different ways, or even create wholly custom transitions.
+
+//To demostrate this, here's a VStack with a button and a rectangle:
+
+/*
+ struct ContentView: View {
+    var body: some View {
+        VStack {
+            Button("Tap Me") {
+                // do nothing
+            }
+ 
+            Rectangle()
+                .fill(Color.red)
+                .frame(width: 200, height: 200)
+        }
+    }
+ }
+ */
+
 //MARK: 4. Building Custom Transitions Using ViewModifier
