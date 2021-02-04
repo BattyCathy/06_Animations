@@ -243,4 +243,42 @@ import Foundation
  }
  */
 
+
+//We can make the rectangle appear only when a certain condition is satisfied. First, we add some state we can manipulate:
+
+//@State private var isShowingRed = false
+
+//Next we use that state as a condition for showing our rectangle:
+
+/*
+ if isShowingRed {
+    Rectangle()
+        .fill(Color.red)
+        .frame(width: 200, height: 200)
+ }
+ */
+
+//Finally, we can toggle isShowingRed between true and false in the button's action:
+
+//self.isShowingRed.toggle()
+
+//If you run the program, you'll see that pressing the button shows and hides the red square. There's no animation; it just appears and disappears abruptly.
+
+//We can get SwiftUI's default view transition by wrapping the state change using withAnimation(), like this:
+
+/*
+ withAnimation {
+    self.isShowingRed.toggle()
+ */
+
+//With that small change, the app now fades the red retangle in and out, while also moving the button up to make space. It looks OK, but we can do better with the transition() modifier.
+
+//For example, we could have the rectangle scale up and down as it is shown just by adding the transition() modifier to it:
+
+/*
+ Rectangle()
+    .fill(Color.red)
+    .frame(width: 200, height: 200)
+    .transition(.scale)
+ */
 //MARK: 4. Building Custom Transitions Using ViewModifier
