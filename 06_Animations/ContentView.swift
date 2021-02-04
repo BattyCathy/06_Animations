@@ -20,10 +20,13 @@ struct ContentView: View {
             }
         }
         .padding(50)
+      
         .background(enabled ? Color.blue : Color.red)
         .foregroundColor(.white)
-        .clipShape(Circle())
+        .animation(.interpolatingSpring(stiffness: 10, damping: 1))
+        .clipShape(RoundedRectangle(cornerRadius: enabled ? 60 : 0))
         .rotation3DEffect(.degrees(animationAmount), axis: (x: 0, y: 1, z: 0))
+        .animation(.default)
     }
 }
 

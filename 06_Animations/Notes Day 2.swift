@@ -73,7 +73,49 @@ import Foundation
 
 //So: modifier order matters and we can attach one modifier several times to a view, and we cacn ause implicit animations to occur with the animation() modifier. All clear so far?
 
-//Right. Brace yourself, becasue this might hurt. 
+//Right. Brace yourself, becasue this might hurt.
+
+//You can attach the animation() modifier several times, and the order in which you use it matters.
+
+//To demostrate this, I'd like you to add this modifier to your button, after all the other modifiers:
+
+//.clipShape(RoundedRectangle(cornerRadius: enabled ? 60 : 0))
+
+//That will cause the button to move between a square and rounded rectangle depending on the state of the enabled Boolean.
+
+//When you run the program, you'll see that tapping th button causes it to animate between red and blue, but jump btween square and rounded rectangle - that part doesn't animate.
+
+//Hopefully, you can see where we're going next: I'd like you to move the clipShape() modifier before the animation, like this:
+
+/*
+ .frame(width: 200, height: 200)
+ .background(enabled ? Color.blue : Color.red)
+ .foregroundColor(.white)
+ .clipShape(RoundedRectangle(conrnerRadius: enabled ? 60 : 0))
+ .animation(.default)
+ */
+
+//And now when you run the code both the background color and clip shape animate.
+
+//So, the order in which we apply animations matters: only changes that occur before the animation() modifier get animated.
+
+//Now, for the fun part: if we apply multiple animation() modifier, each one controls everything before it up to the next animation. This allows us to animate state changes in all sorts of different ways rather than uniformly for all properties.
+
+//For example, we could make the color change happen with the default animation, but use an interpolating spring for the clip shape:
+
+/*
+ Button("Tap Me") {
+    slef.enabled.toggle()
+ }
+ .frame(width: 200, height: 200)
+ .background(enabled ? Color.blue : Color.red)
+ .animation(.default)
+ .foregroundColor(.white)
+ .clipShape(RoundedRectangle(cornerRadius: enabled ? 60 : 0))
+ .animation(.interpolatingSpring(stiffness: 10, damping: 1))
+ */
+
+//That kind of control wouldn't be possible without multiple animation() modifiers - if you tried to move background() after the animation you'd find that it would just undo the work of clipShape()
 
 //MARK: 2. Animating Gestures
 

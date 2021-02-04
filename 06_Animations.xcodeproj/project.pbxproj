@@ -101,8 +101,8 @@
 			children = (
 				B162F0EC25CB69A1002061F9 /* _6_AnimationsApp.swift */,
 				B162F0EE25CB69A1002061F9 /* ContentView.swift */,
-				B173AC8C25CB9FFE00B6839E /* Notes Day 2.swift */,
 				B162F11A25CB69FB002061F9 /* Notes.swift */,
+				B173AC8C25CB9FFE00B6839E /* Notes Day 2.swift */,
 				B162F0F025CB69A5002061F9 /* Assets.xcassets */,
 				B162F0F525CB69A5002061F9 /* Info.plist */,
 				B162F0F225CB69A5002061F9 /* Preview Content */,
